@@ -75,22 +75,21 @@ button:hover {
   }
 }
 
-// .title {
-//     margin-bottom: 30px;
-//    font-weight: 700;
-//    font-size: 28px;
-//    line-height: 1.17;
-//    text-transform: uppercase;
-//    text-align: center;
-//    color: $main-color;
+.title {
+    margin-bottom: 30px;
+   font-weight: 700;
+   font-size: 28px;
+   line-height: 1.17;
+   text-transform: uppercase;
+   text-align: center;
+   color: $main-color;
 
-//    @media screen and (min-width: $desktop) {
-//       margin-bottom: 50px;
-//       font-size: 36px;
-//       line-height: (42px / 36px);
-//    }
-  
-// }
+   @media screen and (min-width: $desktop) {
+      margin-bottom: 50px;
+      font-size: 36px;
+      line-height: (42px / 36px);
+   }
+}
 
 .link {
   color: $main-color;

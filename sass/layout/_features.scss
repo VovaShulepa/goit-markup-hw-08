@@ -1,0 +1,40 @@
+.features_list {
+  @media screen and (min-width: $tablet) {
+    @include cardSet();
+  }
+}
+
+.features__item {
+  &:not(:last-child) {
+    @media screen and (max-width: 767px) {
+      margin-bottom: 30px;
+    }
+  }
+
+  @media screen and (min-width: $tablet) {
+    @include cardSet__item($items: 2);
+  }
+  @media screen and (min-width: $desktop) {
+    @include cardSet__item($items: 4);
+  }
+}
+
+
+.features__icon-wrap {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   height: 120px;
+   margin-bottom: 30px;
+   background: $third-background;
+   border-radius: 4px;
+}
+
+.features__name{
+    font-weight: 700;
+   font-size: $text-size;
+   line-height: 16px;
+   text-transform: uppercase;
+   color: $main-color;
+   margin-bottom: 10px;
+}

@@ -1,11 +1,11 @@
-.header {
+.page-header {
   position: relative;
   border-bottom: 1px solid $header__border-cl;
 }
 
-.page-header {
+.page-header__container {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   min-height: 60px;
 }
@@ -13,7 +13,7 @@
 .menu-container {
   background-color: $main-backround;
 
-  @media screen and (max-width: $tablet) {
+  @media screen and (max-width: 767px) {
     display: none;
 
     &.is-open {
@@ -29,4 +29,217 @@
       overflow-y: scroll;
     }
   }
+
+  @media screen and (min-width: $tablet) {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-grow: 1;
+    margin-left: 88px;
+  }
+  @media screen and (min-width: $desktop) {
+    margin-left: 93px;
+  }
+}
+
+.menu-btn {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background-color: transparent;
+  z-index: 3;
+
+  &.icon-cross {
+    display: none;
+  }
+
+  &.is-open .icon-cross {
+    display: block;
+  }
+
+  &.is-open:hover .icon-cross,
+  &.is-open:focus .icon-cross {
+    fill: $blue-color;
+  }
+
+  &.is-open .icon-menu {
+    display: none;
+  }
+
+  @media screen and (max-width: 767px) {
+    &.is-open {
+      position: fixed;
+      top: 10px;
+      right: 15px;
+      z-index: 10;
+    }
+  }
+
+  @media screen and (min-width: $tablet) {
+    display: none;
+  }
+}
+
+.site-nav__list {
+  @media screen and (min-width: $tablet) {
+    display: flex;
+  }
+}
+
+.site-nav__item {
+  @media screen and (max-width: 767px) {
+    &:not(:last-child) {
+      margin-bottom: 32px;
+    }
+  }
+
+  @media screen and (min-width: $tablet) {
+    &:not(:last-child) {
+      margin-right: 50px;
+    }
+  }
+}
+
+.site-nav__link {
+  font-size: 40px;
+  line-height: (47px / 40px);
+  letter-spacing: 0.02em;
+  font-weight: 500;
+  color: $main-color;
+  transition: color $main-transition;
+
+  &:hover,
+  &:focus,
+  &--current {
+    color: $blue-color;
+  }
+
+  @media screen and (min-width: $tablet) {
+    position: relative;
+    display: block;
+    padding-top: 32px;
+    padding-bottom: 32px;
+    font-size: 14px;
+    line-height: (16px / 14px);
+
+    &--current::after {
+      content: '';
+      position: absolute;
+      bottom: -1px;
+      display: block;
+      width: 100%;
+      height: 4px;
+      background-color: $blue-color;
+      border-radius: 2px;
+    }
+  }
+}
+
+.header-contacts {
+  @media screen and (max-width: 767px) {
+    display: flex;
+    flex-direction: column-reverse;
+    margin-top: auto;
+  }
+
+  @media screen and (min-width: $desktop) {
+    display: flex;
+  }
+}
+
+.header-contacts__item {
+  @media screen and (max-width: 767px) {
+    &:not(:first-child) {
+      margin-bottom: 32px;
+    }
+  }
+  @media screen and (min-width: $tablet) and (max-width: 1199px) {
+    &:not(:last-child) {
+      margin-bottom: 10px;
+    }
+  }
+  @media screen and (min-width: $desktop) {
+    &:not(:last-child) {
+      margin-right: 30px;
+    }
+  }
+}
+
+.header-contacts__link {
+  font-size: 24px;
+  line-height: (28px / 24px);
+  letter-spacing: 0.02em;
+  font-weight: 500;
+  align-items: center;
+  color: $title-color;
+  transition: color $main-transition;
+
+  &:hover,
+  &:focus {
+    color: $blue-color;
+  }
+
+  @media screen and (max-width: 767px) {
+    &--bigger {
+      font-size: 34px;
+      line-height: (40px / 34px);
+      color: $blue-color;
+    }
+  }
+
+  @media screen and (min-width: $tablet) {
+    display: flex;
+    align-items: center;
+    font-size: 12px;
+    line-height: (14px / 12px);
+  }
+
+  @media screen and (min-width: $desktop) {
+    padding-top: 32px;
+    padding-bottom: 32px;
+    font-size: 14px;
+    line-height: (16px / 14px);
+  }
+}
+
+.header-contacts__icon {
+  margin-right: 8px;
+  fill: currentColor;
+
+  @media screen and (max-width: 767px) {
+    display: none;
+  }
+
+  @media screen and (min-width: $tablet) {
+    margin-right: 10px;
+  }
+}
+
+.header__socials {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-top: 64px;
+  @media screen and (min-width: $tablet) {
+    display: none;
+  }
+}
+
+.header__socials-item {
+  position: relative;
+  &:not(:last-child) {
+    margin-right: 10px;
+    padding-right: 10px;
+    border-right: 1px solid rgba(33, 33, 33, 0.2);
+  }
+}
+
+.header__socials-link {
+  display: block;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: (22px / 18px);
+  letter-spacing: 0.02em;
+  color: $blue-color;
 }

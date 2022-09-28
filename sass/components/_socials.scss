@@ -1,70 +1,66 @@
-
-.team__socials__list{
-   display: flex;
-   justify-content: center;
-   align-items: center;
-   width: 206px;
-   height: 44px;
-   margin-left: auto;
-   margin-right: auto;
+.team__socials__list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 206px;
+  height: 44px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-.team__socials__item{
-  &:not(:last-child){
-   margin-right: 10px;
+.team__socials__item {
+  &:not(:last-child) {
+    margin-right: 10px;
   }
 }
 
 .team__socials__link {
-   display: flex;
-   justify-content: center;
-   align-items: center;
-   width: 44px;
-   height: 44px;
-   color: $social-color;
-   transition: background-color $main-transition,
-               color $main-transition,
-               border-radius $main-transition;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 44px;
+  height: 44px;
+  color: $social-color;
+  transition: background-color $main-transition, color $main-transition,
+    border-radius $main-transition;
 
-   &:hover,
-   &:focus{
-      border-radius: 50%;
-   background-color: $blue-color;
-   color: $main-backround;
-   }            
+  &:hover,
+  &:focus {
+    border-radius: 50%;
+    background-color: $blue-color;
+    color: $main-backround;
+  }
 }
 
 .team__socials__icon {
-   fill: currentColor;
+  fill: currentColor;
 }
 
 .footer-socials__list {
-   display: flex;
-   justify-content: center;
-   width: 206px;
-   height: 44px;
-   gap: 10px;
+  display: flex;
+  justify-content: center;
+  height: 44px;
+  gap: 10px;
 }
 
 .footer-socials__link {
-   display: flex;
-   justify-content: center;
-   align-items: center;
-   width: 44px;
-   height: 44px;
-   color: $main-backround;
-   border-radius: 50%;
-   background-color: $footer-socials;
-   transition: background-color $main-transition,
-      color $main-transition;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 44px;
+  height: 44px;
+  color: $main-backround;
+  border-radius: 50%;
+  background-color: $footer-socials;
+  transition: background-color $main-transition, color $main-transition;
 
-      &:hover,
-      &:focus {
-        background-color: $blue-color;
-   color: $main-backround;
-}
+  &:hover,
+  &:focus {
+    background-color: $blue-color;
+    color: $main-backround;
+  }
 }
 
 .footer-socials__icon {
-   fill: currentColor;
+  fill: currentColor;
 }

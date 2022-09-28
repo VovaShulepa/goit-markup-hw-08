@@ -48,7 +48,7 @@
   }
 
   @media screen and (min-width: $desktop) {
-    max-width: $desktop;
+    max-width: 1600px;
     height: 600px;
 
     background-image: linear-gradient($hero-overlay, $hero-overlay),
