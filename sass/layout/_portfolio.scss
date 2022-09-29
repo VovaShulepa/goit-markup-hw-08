@@ -79,6 +79,7 @@
     padding: 20px 24px;
     border: 1px solid $projects-border;
     border-top: none;
+    flex-grow: 1;
   }
   &__tag {
     color: $title-color;

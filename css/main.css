@@ -1280,6 +1280,9 @@ button:hover {
   padding: 20px 24px;
   border: 1px solid #eeeeee;
   border-top: none;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
 }
 .projects__tag {
   color: #757575;
