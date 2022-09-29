@@ -1,5 +1,9 @@
 .page-header {
-  position: relative;
+  // position: relative;
+  position: sticky;
+  top: -1px;
+  z-index: 10;
+  background-color: $main-backround;
   border-bottom: 1px solid $header__border-cl;
 }
 
