@@ -107,6 +107,7 @@
 
 .projects__img {
   width: 100%;
+ 
 }
 
 .project__description {
@@ -122,10 +123,10 @@
 
   padding: 63px 24px;
   font-size: 18px;
-  line-height: 1.56;
+  line-height: calc(26px / 18px);
   color: $main-backround;
   background-color: $projects-cards__background;
-  transform: translateY(100%);
+  transform: translateY(115%);
   transition: transform $main-transition;
 }
 
@@ -156,5 +157,6 @@
   &__img-wrap {
     position: relative;
     overflow: hidden;
+    
   }
 }
