@@ -10,7 +10,7 @@
 }
 
 .hero-overlay {
-  max-width: 480px;
+  max-width: 100%;
   height: 400px;
   background-color: $secondary-background;
   margin-left: auto;
@@ -31,7 +31,7 @@
   }
 
   @media screen and (min-width: $tablet) {
-    max-width: $tablet;
+    max-width: 100%;
     height: 400px;
 
     background-image: linear-gradient($hero-overlay, $hero-overlay),
