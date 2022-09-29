@@ -8,27 +8,44 @@
   transition: transform $main-transition, opacity $main-transition,
     visibility $main-transition;
   opacity: 1;
-  z-index: 1;
+  overflow-y: scroll;
+  z-index: 4;
 
-  &.is-hidden {
-    visibility: hidden;
-    opacity: 0;
-    pointer-events: none;
+  @media screen and (max-width: 767px) {
+    padding: 93px 15px;
   }
 }
 
 .modal {
-  position: absolute;
-  width: 528px;
-  height: 581px;
-  top: 50%;
-  left: 50%;
-  padding: 40px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
   background-color: $main-backround;
-  border-radius: 4px;
-  box-shadow: $modal__box-shadow;
-  transform: translate(-50%, -50%) scaleX(1);
+
+  transform: scaleX(1);
   transition: transform $main-transition;
+
+  @media screen and (min-width: 480px) {
+    width: 450px;
+    height: 609px;
+  }
+
+  @media screen and (min-width: 768px) and (min-height: 609px) {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  @media screen and (min-width: 1200px) {
+    width: 528px;
+    height: 581px;
+  }
+}
+
+.backdrop.is-hidden {
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
 }
 
 .backdrop.is-hidden .modal {
@@ -63,41 +80,49 @@
 .modal-form {
   display: flex;
   flex-direction: column;
-  &__title {
-    margin-left: 0;
-    margin-bottom: 12px;
-    font-weight: 700;
-    font-size: 20px;
-    line-height: 1.15;
-    text-align: center;
-    color: $main-color;
-  }
-  &__field {
-    position: relative;
-    margin-bottom: 10px;
-    & input {
-      width: 448px;
-      height: 40px;
-      padding-left: 42px;
-      border: 1px solid $modal-border;
-      border-radius: 4px;
-    }
+  padding: 40px;
+}
+
+.modal-form__title {
+  margin-bottom: 12px;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: calc(30px / 20px);
+  text-align: center;
+  color: $main-color;
+
+  @media screen and (min-width: 1200px) {
+    line-height: calc(23px / 20px);
   }
 }
 
-.modal-form__field input:focus,
-.modal-form__textarea textarea:focus {
-  border: 1px solid $blue-color;
-  outline: transparent;
+.modal-form__field {
+  position: relative;
+  margin-bottom: 10px;
+  transition: border $main-transition;
 }
 
 .modal-form__label {
   display: block;
   margin-bottom: 4px;
   font-size: 12px;
-  line-height: 1.17;
+  line-height: calc(14px / 12px);
   letter-spacing: 0.01em;
   color: $title-color;
+}
+
+.modal-form__input {
+  width: 100%;
+  height: 40px;
+  padding: 0 0 0 42px;
+  border: 1px solid $modal-border;
+  border-radius: 4px;
+}
+
+.modal-form__field input:focus,
+.modal-form__textarea textarea:focus {
+  border: 1px solid $blue-color;
+  outline: transparent;
 }
 
 .modal-form__field input:focus + .modal-form-icon {
@@ -109,13 +134,14 @@
   bottom: 11px;
   left: 12px;
   fill: $secondary-background;
+  transition: fill $main-transition;
 }
 
 .modal-form__textarea {
   margin-bottom: 20px;
   & textarea {
     display: block;
-    width: 448px;
+    width: 100%;
     height: 120px;
     padding: 12px 16px;
     resize: none;
@@ -124,6 +150,7 @@
   }
   & textarea::placeholder {
     font-size: 12px;
+    line-height: calc(14px / 12px);
     letter-spacing: 0.01em;
     color: $modal-textarea;
   }
@@ -133,24 +160,20 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
 
-  & label {
-    margin-bottom: 0;
-    font-size: 122px;
-    letter-spacing: 0.01em;
-    line-height: 1.71;
-  }
-  & input {
-    width: 16px;
-    height: 15px;
-    margin-right: 7px;
-  }
-  a {
-    color: $blue-color;
+.modal-policy-label {
+  font-size: 12px;
+  line-height: calc(14px / 12px);
+  color: $title-color;
+  @media screen and (min-width: 1200px) {
+    font-size: 14px;
+    line-height: calc(24px / 14px);
   }
 }
 
 .undescore-a {
+  color: $blue-color;
   text-decoration: underline;
 }
 
@@ -165,13 +188,20 @@
   clip: rect(0 0 0 0);
   clip-path: inset(50%);
   margin: -1px;
+  margin-right: 8px;
+
+  @media screen and (min-width: 1200px) {
+    margin-right: 7px;
+  }
 }
 
 .modal-form__policy-icon {
   order: -1;
-  margin-right: 7px;
+  min-width: 16px;
+  margin-right: 8px;
   border: 1px solid $main-color;
   border-radius: 2px;
+
   &:hover {
     cursor: pointer;
   }
@@ -182,12 +212,13 @@
   border: 1px solid $blue-color;
   box-shadow: none;
 }
+
 .modal-form__submit-btn {
   padding: 10px 52px;
   margin: 30px auto 0;
   font-weight: 700;
   font-size: 16px;
-  line-height: 1.88;
+  line-height: calc(30px / 16px);
   letter-spacing: 0.06em;
   color: $main-backround;
   background-color: $blue-color;
@@ -199,9 +230,4 @@
     background: $btn-hover;
     box-shadow: 0px 4px 4px $subscribe-drop;
   }
-}
-
-.modal-policy-label {
-  line-height: 1.71;
-  color: $title-color;
 }

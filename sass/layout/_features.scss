@@ -1,5 +1,5 @@
-.features_list {
-  @media screen and (min-width: $tablet) {
+.features__list {
+  @media screen and (min-width: 768px) {
     @include cardSet();
   }
 }
@@ -11,30 +11,39 @@
     }
   }
 
-  @media screen and (min-width: $tablet) {
+  @media screen and (min-width: 768px) {
     @include cardSet__item($items: 2);
   }
-  @media screen and (min-width: $desktop) {
+
+  @media screen and (min-width: 1200px) {
     @include cardSet__item($items: 4);
   }
 }
 
-
 .features__icon-wrap {
-   display: flex;
-   justify-content: center;
-   align-items: center;
-   height: 120px;
-   margin-bottom: 30px;
-   background: $third-background;
-   border-radius: 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 120px;
+  margin-bottom: 30px;
+  background: $third-background;
+  border-radius: 4px;
 }
 
-.features__name{
-    font-weight: 700;
-   font-size: $text-size;
-   line-height: 16px;
-   text-transform: uppercase;
-   color: $main-color;
-   margin-bottom: 10px;
+.features__name {
+  margin-bottom: 10px;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.14;
+  text-transform: uppercase;
+  color: $main-color;
+
+  @media screen and (max-width: 767px) {
+    text-align: center;
+  }
+}
+
+.features__icon {
+  width: 70px;
+  height: 70px;
 }

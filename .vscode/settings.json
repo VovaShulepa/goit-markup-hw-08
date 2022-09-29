@@ -17,5 +17,6 @@
       "> 1%",
       "last 2 versions"
    ],
-   "files.autoSave": "afterDelay"
+   "files.autoSave": "afterDelay",
+   "liveServer.settings.port": 5501
 }

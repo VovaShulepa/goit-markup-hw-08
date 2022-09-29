@@ -1,18 +1,19 @@
+@import "./utils/variables";
+@import "./utils/mixins";
+@import "./utils/breakpoints";
 
-@import './utils/variables';
-@import './utils/mixins';
-@import './utils/breakpoints';
-
-@import './base/common';
-
-@import './components/logo';
-@import './components/socials';
-
-@import './layout/header';
-@import './layout/hero';
-@import './layout/features';
-@import './layout/team';
-
-
-@import './layout/footer';
 // ======Adaptive===========
+@import "./base/common";
+
+@import "./components/logo";
+@import "./components/socials";
+
+@import "./layout/header";
+@import "./layout/hero";
+@import "./layout/features";
+@import "./layout/team";
+@import "./layout/direction";
+@import "./layout/clients";
+@import "./layout/modal";
+@import "./layout/portfolio";
+@import "./layout/footer";
